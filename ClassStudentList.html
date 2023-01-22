@@ -1,0 +1,57 @@
+<html>
+<body>
+<h1> class information</h1>
+<table>
+<table border="1">
+    <thead>
+        <tr>
+            <td>class</td>
+            <td>description</td>
+            <td>section</td>
+        </tr>
+    </thead>
+        {% for i in clist %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.section}}</td>
+            <td><a href="/edit-class/{{i.id}}/">Edit</a></td>
+        </tr>
+        
+        {% endfor %}
+
+</table>
+<form action ='/add-class/' method="GET"> 
+<input type ="submit" value="addClass">
+<input type="hidden" name="qId" value="AB">
+</form>
+
+
+<h1>student information<h1>
+<table>
+<table border="1">
+    <thead>
+        <tr>
+            <td>name</td>
+            <td>age</td>
+            <td>number</td>
+            <td>class</td>
+        </tr>
+    </thead>
+        {% for i in slist %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.number}}</td>
+            <td>{{i.Class.name}}:{{i.Class.section}}</td>
+            <td><a href="/edit-student/{{i.id}}/">Edit</a></td>
+        </tr>
+        {% endfor %}
+</table>
+<form action ='/add-student/' method="GET"> 
+<input type ="submit" value="addStudent">
+<input type="hidden" name="qId" value="AB">
+</form>
+
+</body>
+</html>

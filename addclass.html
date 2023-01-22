@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>add class information</h1>
+
+<form action='add-class' method="POST">{% csrf_token %}
+{{ form.as_p}}
+<input type =submit value=addClass>
+</form>
+
+</body>
+</html>
